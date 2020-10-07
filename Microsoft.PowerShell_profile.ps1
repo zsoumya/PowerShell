@@ -1,10 +1,12 @@
 ﻿Import-Module posh-git -RequiredVersion 1.0.0
 
-$promptChar = '⚡'
+$PSModuleAutoLoadingPreference = [System.Management.Automation.PSModuleAutoLoadingPreference]::All
+
+$promptChar = if (Test-Admin) { '⚡' } else { '$' }
 $separatorChar = '➤'
 $promptPathForeColor = 'magenta'
 $promptPrefixForeColor = 'yellow'
-$promptStringForeColor = 'darkred'
+$promptStringForeColor = 'red'
 
 $newLine = [System.Environment]::NewLine
 $bit = @{ $True = 'x64'; $False = 'x86' }[[System.Environment]::Is64BitProcess]
@@ -25,4 +27,3 @@ $Global:GitPromptSettings.DefaultPromptWriteStatusFirst = $false
 
 $Global:GitPromptSettings.PathStatusSeparator.ForegroundColor = $promptPrefixForeColor
 $Global:GitPromptSettings.PathStatusSeparator.Text = " $separatorChar "
-
