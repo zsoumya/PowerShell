@@ -2,7 +2,7 @@
 
 $PSModuleAutoLoadingPreference = [System.Management.Automation.PSModuleAutoLoadingPreference]::All
 
-$promptChar = if (Test-Admin) { '⚡' } else { '$' }
+$promptChar = if (Test-Admin) { '⚡' } else { '☰' } # ➲ ➤ ⯈ ⺴
 $separatorChar = '➤'
 $promptPathForeColor = 'magenta'
 $promptPrefixForeColor = 'yellow'
