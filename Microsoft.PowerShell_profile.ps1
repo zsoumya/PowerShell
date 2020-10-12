@@ -27,3 +27,5 @@ $Global:GitPromptSettings.DefaultPromptWriteStatusFirst = $false
 
 $Global:GitPromptSettings.PathStatusSeparator.ForegroundColor = $promptPrefixForeColor
 $Global:GitPromptSettings.PathStatusSeparator.Text = " $separatorChar "
+
+Clear-Host
